@@ -6,119 +6,185 @@ import Icon from "@/components/ui/icon";
 const Portfolio = () => {
   const projects = [
     {
-      title: "Электроника на Wildberries",
+      title: "КЕЙС № 1",
+      subtitle: "Электроника на Wildberries",
       category: "Категорийный менеджмент",
-      description:
-        "Увеличил продажи категории на 180% за 8 месяцев через оптимизацию ассортимента и SEO",
-      metrics: [
+      task: "Увеличить продажи категории электроники через оптимизацию ассортимента и улучшение позиций в поиске",
+      solution:
+        "Провел глубокий анализ конкурентов, оптимизировал SEO-описания, внедрил матрицу ABC/XYZ для управления остатками",
+      results: [
         { label: "Рост продаж", value: "180%" },
         { label: "Новых SKU", value: "150+" },
         { label: "Рост конверсии", value: "45%" },
+        { label: "Позиции в ТОП-10", value: "85%" },
+        { label: "ROI кампании", value: "320%" },
+        { label: "Средний чек", value: "+40%" },
       ],
       tags: ["Wildberries", "Электроника", "SEO"],
-      image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=250&fit=crop",
     },
     {
-      title: "Спортивные товары на OZON",
+      title: "КЕЙС № 2",
+      subtitle: "Спортивные товары на OZON",
       category: "Аналитика и оптимизация",
-      description:
-        "Автоматизировал процесс ценообразования и увеличил маржинальность на 35%",
-      metrics: [
+      task: "Автоматизировать процесс ценообразования и увеличить маржинальность при сохранении объемов продаж",
+      solution:
+        "Разработал систему динамического ценообразования, настроил автоматические правила управления остатками и промо-акциями",
+      results: [
         { label: "Рост маржи", value: "35%" },
         { label: "Экономия времени", value: "20ч/нед" },
         { label: "Товарооборот", value: "₽15M+" },
+        { label: "Конверсия", value: "+28%" },
+        { label: "Автоматизация", value: "90%" },
+        { label: "Средний чек", value: "+25%" },
       ],
       tags: ["OZON", "Спорт", "Автоматизация"],
-      image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
     },
     {
-      title: "Косметика на Яндекс.Маркете",
+      title: "КЕЙС № 3",
+      subtitle: "Косметика на Яндекс.Маркете",
       category: "Запуск с нуля",
-      description:
-        "Вывел бренд в ТОП-10 по категории за 6 месяцев с нулевого старта",
-      metrics: [
+      task: "Вывести новый бренд косметики в ТОП-10 категории за минимальные сроки с нулевого старта",
+      solution:
+        "Создал полную стратегию запуска: от анализа ниши до настройки рекламных кампаний и работы с influencer-маркетингом",
+      results: [
         { label: "Позиция в ТОП", value: "#7" },
         { label: "Месячный оборот", value: "₽8M" },
         { label: "Средний чек", value: "+60%" },
+        { label: "Узнаваемость", value: "40%" },
+        { label: "Повторные покупки", value: "35%" },
+        { label: "Рост за 6 мес", value: "450%" },
       ],
       tags: ["Яндекс.Маркет", "Косметика", "Бренд"],
-      image:
-        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=250&fit=crop",
     },
   ];
 
   return (
-    <section className="py-20 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 bg-gray-900">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-montserrat text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="font-montserrat text-4xl font-bold text-white mb-4">
             Портфолио проектов
           </h2>
-          <p className="font-opensans text-lg text-neutral max-w-2xl mx-auto">
-            Конкретные кейсы с измеримыми результатами и ROI
+          <p className="font-opensans text-lg text-gray-300 max-w-2xl mx-auto">
+            Конкретные кейсы с измеримыми результатами и детальным разбором
+            решений
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-12">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in border-0 shadow-md"
+              className="bg-gray-800 border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300"
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <CardHeader className="pb-4">
-                <div className="flex items-start justify-between mb-2">
-                  <Badge variant="outline" className="font-opensans text-xs">
-                    {project.category}
-                  </Badge>
-                </div>
-                <CardTitle className="font-montserrat text-xl mb-2">
-                  {project.title}
-                </CardTitle>
-                <p className="font-opensans text-sm text-neutral leading-relaxed">
-                  {project.description}
-                </p>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                  {project.metrics.map((metric, metricIndex) => (
-                    <div key={metricIndex} className="text-center">
-                      <div className="font-montserrat font-bold text-primary">
-                        {metric.value}
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+                  {/* Левая часть - информация */}
+                  <div className="p-8 lg:p-12 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                          <Icon
+                            name="User"
+                            size={24}
+                            className="text-gray-900"
+                          />
+                        </div>
+                        <div>
+                          <div className="font-opensans text-sm text-gray-400">
+                            Имя фамилия
+                          </div>
+                          <div className="font-opensans text-sm text-gray-400">
+                            @ваш ник
+                          </div>
+                        </div>
                       </div>
-                      <div className="font-opensans text-xs text-neutral">
-                        {metric.label}
+
+                      <h3 className="font-montserrat text-3xl lg:text-4xl font-bold text-white mb-4">
+                        {project.title}
+                        <Icon
+                          name="ArrowDown"
+                          size={28}
+                          className="inline ml-2"
+                        />
+                      </h3>
+
+                      <div className="space-y-6">
+                        <div>
+                          <h4 className="font-montserrat text-xl font-semibold text-white mb-2">
+                            Задача:
+                          </h4>
+                          <div className="bg-gray-700 rounded-lg p-4">
+                            <p className="font-opensans text-gray-300 leading-relaxed">
+                              {project.task}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="font-montserrat text-xl font-semibold text-white mb-2">
+                            Решение:
+                          </h4>
+                          <div className="bg-gray-700 rounded-lg p-4">
+                            <p className="font-opensans text-gray-300 leading-relaxed">
+                              {project.solution}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  ))}
+
+                    <div className="mt-8">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, tagIndex) => (
+                          <Badge
+                            key={tagIndex}
+                            variant="secondary"
+                            className="bg-gray-700 text-gray-300 font-opensans"
+                          >
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Правая часть - результаты */}
+                  <div className="bg-gray-750 p-8 lg:p-12 flex flex-col justify-between">
+                    <div>
+                      <h4 className="font-montserrat text-2xl font-semibold text-white mb-8">
+                        Результат:
+                      </h4>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        {project.results.map((result, resultIndex) => (
+                          <div
+                            key={resultIndex}
+                            className="bg-red-600 rounded-lg p-4 text-center hover:bg-red-500 transition-colors duration-200"
+                          >
+                            <div className="font-montserrat text-2xl font-bold text-white mb-1">
+                              {result.value}
+                            </div>
+                            <div className="font-opensans text-sm text-red-100">
+                              {result.label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-8">
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        className="w-full bg-transparent border-white text-white hover:bg-white hover:text-gray-900 font-montserrat"
+                      >
+                        <Icon name="ExternalLink" size={20} />
+                        Подробный разбор кейса
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge
-                      key={tagIndex}
-                      variant="secondary"
-                      className="font-opensans text-xs"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full font-opensans"
-                >
-                  <Icon name="ExternalLink" size={16} />
-                  Подробнее
-                </Button>
               </CardContent>
             </Card>
           ))}

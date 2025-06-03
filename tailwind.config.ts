@@ -54,6 +54,7 @@ export default {
         },
         ocean: "#0EA5E9",
         neutral: "#8E9196",
+        "gray-750": "#374151",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
