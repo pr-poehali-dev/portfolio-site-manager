@@ -13,7 +13,7 @@ const Hero = () => {
             Анна Петрова
           </h1>
           <p className="font-opensans text-xl md:text-2xl font-medium mb-2">
-            Менеджер маркетплейса
+            Менеджеры по продвижению Wildberries
           </p>
           <p className="font-opensans text-lg opacity-90">
             Увеличиваю продажи на 150%+ через аналитику и оптимизацию
